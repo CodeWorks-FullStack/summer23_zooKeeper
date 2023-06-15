@@ -1,3 +1,5 @@
+// SECTION global variables
+
 const animals = [
   {
     name: 'Jeremy',
@@ -25,6 +27,10 @@ const animals = [
 
 let money = 0
 
+// SECTION functions
+
+
+// REVIEW we can pass this this function to a find instead of writing an anonymous function
 // function returnLilBabyJeremy(animal) {
 //   if (animal.name == 'Little Baby Jeremy') {
 //     return true
@@ -32,22 +38,30 @@ let money = 0
 // }
 
 
+// NOTE no longer need this function, refactored into feedAnimal function
 function feedLilBabyJeremy() {
   // ✅ get lil baby jeremy out of the array
+
   // REVIEW 3 different ways to have the same outcome
   // let lilBabyJeremy = animals.find(returnLilBabyJeremy)
   // let lilBabyJeremy = animals[0]
   let jeremy = animals.find(animal => animal.name == 'Little Baby Jeremy')
 
 
+  // NOTE truthy falsey. if jeremy is undefined, the codeblock inside of the if statement runs
+  // REVIEW truthy: https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+  // REVIEW falsy: https://developer.mozilla.org/en-US/docs/Glossary/Falsy 
   if (!jeremy) {
     console.error("Your code doesn't work")
+    // NOTE end function
     return
   }
 
 
+
   // ✅ make sure he is alive
   if (!jeremy.isAlive) {
+    // NOTE end function
     return
   }
 
@@ -55,6 +69,7 @@ function feedLilBabyJeremy() {
   jeremy.hunger++
 
   // ✅ make sure hunger doesn't go above 100
+  // NOTE clamp
   if (jeremy.hunger >= 100) {
     jeremy.hunger = 100
   }
@@ -131,6 +146,7 @@ function drawMoney() {
 }
 
 function decreaseHunger() {
+
   // NOTE for each is now handling this
   // animals[0].hunger -= 10
   // animals[1].hunger -= 10
@@ -168,21 +184,27 @@ function decreaseHunger() {
     }
 
   })
-  // console.log(animals);
 
   drawAnimals()
 }
 
 function getPaid() {
 
+
+  // NOTE create a scoped variable so that we can add to this using our forEach
   let paycheck = 0
 
   animals.forEach(animal => {
 
+
+    // NOTE switch statement takes in one value as its key, and runs cases against that key
     switch (animal.mood) {
+      // NOTE this case case checks to see if the key that we passed down (animal.mood) matches with the value '😁'
       case '😁':
+        // NOTE if the above case evaluated as true, this code block is run
         console.log('The animal is super happy!');
         paycheck += 50
+        // NOTE break tells the switch statement to stop running
         break;
 
       case '😐':
@@ -201,6 +223,7 @@ function getPaid() {
         break;
 
 
+      // NOTE if none of our cases match the above key (animal.mood), the default runs
       default:
         console.log('The animal is probably at the farm');
         paycheck -= 20
@@ -222,15 +245,18 @@ function getPaid() {
 
 }
 
+// NOTE we set this up at the end of lecture to fire off when our oncontextmenu event is fired off from our HTML
 function rightClick() {
   window.event.preventDefault()
   console.log('you right clicked');
 }
 
 
+// NOTE we pass a function definition as the instructions for setInterval to run
+// NOTE this setInterval will call our decreaseHunger function every 2000 milliseconds
 setInterval(decreaseHunger, 2000)
 
+// NOTE this setInterval will call our getPaud function every 6000 milliseconds
 setInterval(getPaid, 6000)
-
 
 drawAnimals()
