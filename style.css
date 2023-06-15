@@ -1,0 +1,34 @@
+*{
+  user-select: none;
+}
+
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main{
+  flex-grow: 1;
+}
+
+.animal-pen{
+  border: .2em dashed black; 
+}
+
+.animal-pen > marquee{
+  height: 45vh;
+}
+
+.animal{
+  font-size: 2em;
+  text-shadow: 0 1px 3px black;
+}
+
+
+
+.animal:hover{
+  cursor: crosshair;
+}

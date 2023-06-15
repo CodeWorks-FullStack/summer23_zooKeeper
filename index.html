@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body oncontextmenu="return false">
+
+  <header class="container-fluid">
+    <div class="row bg-dark">
+      <div class="col-12 p-3 text-light">
+        <h1>Zoooooo Keeper</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-fluid">
+    <div class="row">
+      <div id="Jeremy" class="col-4 p-4">
+        <div class="animal-pen">
+          <marquee behavior="alternate" direction="up">
+            <marquee behavior="alternate" direction="left">
+              <span onclick="feedAnimal('Jeremy')" class="animal">🦞</span>
+            </marquee>
+          </marquee>
+        </div>
+        <p class="fs-4">Little Baby Jeremy - <span>100</span></p>
+      </div>
+
+      <div id="Michaelangelo" class="col-4 p-4">
+        <div class="animal-pen">
+          <marquee behavior="alternate" scrollamount="15" direction="up">
+            <marquee behavior="alternate" scrollamount="15" direction="left">
+              <span onclick="feedAnimal('Michaelangelo')" oncontextmenu="rightClick()" class="animal">🐒</span>
+            </marquee>
+          </marquee>
+        </div>
+        <p class="fs-4">Michaelangelo - <span>100</span></p>
+      </div>
+
+      <div id="Rodney" class="col-4 p-4">
+        <div class="animal-pen">
+          <marquee behavior="alternate" scrollamount="3" direction="up">
+            <marquee behavior="alternate" scrollamount="4" direction="left">
+              <span onclick="feedAnimal('Rodney')" oncontextmenu="rightClick()" class="animal">🐍</span>
+            </marquee>
+          </marquee>
+        </div>
+        <p class="fs-4">Rodney - <span>100</span></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <h2>Money: <span id="money">0</span></h2>
+        <h2>Paycheck for the cycle: <span id="paycheck">0</span></h2>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container-fluid">
+    <div class="row bg-dark">
+      <div class="col-12 text-center py-3">
+        <p>🌭🌭🌭</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
